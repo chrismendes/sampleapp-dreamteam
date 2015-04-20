@@ -2,6 +2,8 @@
 
 > Pick your Premier League football dream team amongst an array of players and submit to the database to compare with teams submitted by other users.
 
+> Run the app at: http://dreamteam.chrismendes.london
+
 ## Overview
 
 This project built completely from scratch was a major part of my AngularJS learning process and I was keen to implement both framework fundamentals as well as established best practices.
