@@ -14,6 +14,6 @@ This project built completely from scratch was a major part of my AngularJS lear
 
 ## License
 
-Copyright (c) 2014 Chris Mendes
+Copyright (c) 2015 Chris Mendes
 
 Licensed under the MIT License
