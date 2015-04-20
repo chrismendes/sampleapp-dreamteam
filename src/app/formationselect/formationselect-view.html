@@ -1,0 +1,13 @@
+<div class="formationselect" ng-class="{ 'formationselect-compact': (formationCtrl.compactVersion) }">
+  <img ng-src="assets/img/formations/{{formationCtrl.currentFormation}}.jpg"/>
+
+  <div class="formationselect--controls">
+    <span class="formationselect--current">{{formationCtrl.currentFormation | formationHyphenated}}</span>
+    <button class="btn btn-secondary formationselect--change" ng-click="formationCtrl.changeFormation()"
+      ng-bind="(formationCtrl.btnLabel) ? formationCtrl.btnLabel : 'Change &raquo;'">
+    </button>
+    <ul class="formationselect--indicators">
+      <li ng-repeat="formation in formationCtrl.formations" ng-class="{'is-active': formation === formationCtrl.currentFormation}"></li>
+    </ul>
+  </div>
+</div>

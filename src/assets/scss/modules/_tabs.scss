@@ -1,0 +1,62 @@
+.tabs {
+  padding-top: 20px;
+}
+
+.tabs--links {
+  margin: 0;
+  padding: 0;
+  display: block;
+
+  list-style: none;
+}
+
+.tabs--links > li {
+  float: left;
+  height: 45px;
+  margin: 0 0 -1px 0;
+  padding: 0;
+  display: block;
+
+  background: #fcfcfc;
+  background: linear-gradient(to bottom, #fcfcfc, #efefef);
+}
+
+.tabs--links > li.is-active {
+  background: #efefef;
+  background: linear-gradient(to bottom, #efefef, #dfdfdf);
+  border-bottom: 2px solid #4BAF7B;
+}
+.tabs--links > li.is-active a {
+  color: #222;
+}
+
+.tabs--links > li > a {
+  height: 45px;
+  margin: 0 2px 0 0;
+  padding: 10px 20px;
+  display: block;
+
+  color: #666;
+  font-size: 0.85em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+}
+.tabs--links > li > a:hover {
+  color: #222;
+}
+
+
+.tab--content {
+  float: left;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.tab--content > div {
+  display: none;
+}
+
+.tab--content > div.active { // 3rd party tab.js enforces "active" class name (rather than preferred "is-active")
+  display: block;
+}

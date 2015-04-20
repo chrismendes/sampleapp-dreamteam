@@ -1,0 +1,272 @@
+[
+  {
+    "name":         "David de Gea",
+    "club":         "Manchester Utd",
+    "position":     "gk"
+  },
+  {
+    "name":         "Fraser Forster",
+    "club":         "Manchester Utd",
+    "position":     "gk"
+  },
+  {
+    "name":         "Hugo Lloris",
+    "club":         "Tottenham",
+    "position":     "gk"
+  },
+  {
+    "name":         "Joe Hart",
+    "club":         "Manchester City",
+    "position":     "gk"
+  },
+  {
+    "name":         "Simon Mignolet",
+    "club":         "Liverpool",
+    "position":     "gk"
+  },
+  {
+    "name":         "Thibaut Courtois",
+    "club":         "Chelsea",
+    "position":     "gk"
+  },
+  {
+    "name":         "Antonio Valencia",
+    "club":         "Manchester Utd",
+    "position":     "def"
+  },
+  {
+    "name":         "Branislav Ivanovic",
+    "club":         "Chelsea",
+    "position":     "def"
+  },
+  {
+    "name":         "Cesar Azpilicueta",
+    "club":         "Chelsea",
+    "position":     "def"
+  },
+  {
+    "name":         "Chris Smalling",
+    "club":         "Manchester Utd",
+    "position":     "def"
+  },
+  {
+    "name":         "Fabricio Coloccini",
+    "club":         "Newcastle Utd",
+    "position":     "def"
+  },
+  {
+    "name":         "Glen Johnson",
+    "club":         "Liverpool",
+    "position":     "def"
+  },
+  {
+    "name":         "John Terry",
+    "club":         "Chelsea",
+    "position":     "def"
+  },
+  {
+    "name":         "Jose Fonte",
+    "club":         "Southampton",
+    "position":     "def"
+  },
+  {
+    "name":         "Kolo Toure",
+    "club":         "Liverpool",
+    "position":     "def"
+  },
+  {
+    "name":         "Laurent Koscielny",
+    "club":         "Arsenal",
+    "position":     "def"
+  },
+  {
+    "name":         "Leighton Baines",
+    "club":         "Everton",
+    "position":     "def"
+  },
+  {
+    "name":         "Luke Shaw",
+    "club":         "Manchester Utd",
+    "position":     "def"
+  },
+  {
+    "name":         "Martin Skrtel",
+    "club":         "Liverpool",
+    "position":     "def"
+  },
+  {
+    "name":         "Mathieu Debuchy",
+    "club":         "Arsenal",
+    "position":     "def"
+  },
+  {
+    "name":         "Nathaniel Clyne",
+    "club":         "Southampton",
+    "position":     "def"
+  },
+  {
+    "name":         "Pablo Zabaleta",
+    "club":         "Manchester City",
+    "position":     "def"
+  },
+  {
+    "name":         "Phil Jagielka",
+    "club":         "Everton",
+    "position":     "def"
+  },
+  {
+    "name":         "Vincent Kompany",
+    "club":         "Manchester City",
+    "position":     "def"
+  },
+  {
+    "name":         "Alex Song",
+    "club":         "West Ham",
+    "position":     "mid"
+  },
+  {
+    "name":         "Alexis Sanchez",
+    "club":         "Arsenal",
+    "position":     "mid"
+  },
+  {
+    "name":         "Cesc Fabregas",
+    "club":         "Chelsea",
+    "position":     "mid"
+  },
+  {
+    "name":         "Christian Eriksen",
+    "club":         "Tottenham",
+    "position":     "mid"
+  },
+  {
+    "name":         "David Silva",
+    "club":         "Manchester City",
+    "position":     "mid"
+  },
+  {
+    "name":         "Eden Hazard",
+    "club":         "Chelsea",
+    "position":     "mid"
+  },
+  {
+    "name":         "Jordan Henderson",
+    "club":         "Liverpool",
+    "position":     "mid"
+  },
+  {
+    "name":         "Marouane Fellaini",
+    "club":         "Manchester Utd",
+    "position":     "mid"
+  },
+  {
+    "name":         "Mesut Ozil",
+    "club":         "Arsenal",
+    "position":     "mid"
+  },
+  {
+    "name":         "Morgan Schneiderlin",
+    "club":         "Southampton",
+    "position":     "mid"
+  },
+  {
+    "name":         "Nemanja Matic",
+    "club":         "Chelsea",
+    "position":     "mid"
+  },
+  {
+    "name":         "Oscar",
+    "club":         "Chelsea",
+    "position":     "mid"
+  },
+  {
+    "name":         "Philippe Coutinho",
+    "club":         "Liverpool",
+    "position":     "mid"
+  },
+  {
+    "name":         "Raheem Stirling",
+    "club":         "Liverpool",
+    "position":     "mid"
+  },
+  {
+    "name":         "Santi Cazorla",
+    "club":         "Arsenal",
+    "position":     "mid"
+  },
+  {
+    "name":         "Steven Gerrard",
+    "club":         "Liverpool",
+    "position":     "mid"
+  },
+  {
+    "name":         "Stewart Downing",
+    "club":         "West Ham",
+    "position":     "mid"
+  },
+  {
+    "name":         "Yaya Toure",
+    "club":         "Manchester City",
+    "position":     "mid"
+  },
+  {
+    "name":         "Christian Benteke",
+    "club":         "Aston Villa",
+    "position":     "fwd"
+  },
+  {
+    "name":         "Daniel Sturridge",
+    "club":         "Liverpool",
+    "position":     "fwd"
+  },
+  {
+    "name":         "Danny Ings",
+    "club":         "Burnley",
+    "position":     "fwd"
+  },
+  {
+    "name":         "Diego Costa",
+    "club":         "Chelsea",
+    "position":     "fwd"
+  },
+  {
+    "name":         "Harry Kane",
+    "club":         "Tottenham",
+    "position":     "fwd"
+  },
+  {
+    "name":         "Olivier Giroud",
+    "club":         "Arsenal",
+    "position":     "fwd"
+  },
+  {
+    "name":         "Papiss Cisse",
+    "club":         "Newcastle Utd",
+    "position":     "fwd"
+  },
+  {
+    "name":         "Rademel Falcao",
+    "club":         "Manchester Utd",
+    "position":     "fwd"
+  },
+  {
+    "name":         "Robin Van Persie",
+    "club":         "Manchester Utd",
+    "position":     "fwd"
+  },
+  {
+    "name":         "Romelu Lukaku",
+    "club":         "Everton",
+    "position":     "fwd"
+  },
+  {
+    "name":         "Sergio Aguero",
+    "club":         "Manchester City",
+    "position":     "fwd"
+  },
+  {
+    "name":         "Wayne Rooney",
+    "club":         "Manchester Utd",
+    "position":     "fwd"
+  }
+]

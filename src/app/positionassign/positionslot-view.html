@@ -1,0 +1,12 @@
+<div
+  draggable-item
+  draggable-item-mode="link"
+  draggable="true"
+  item-data="{{positionslotCtrl.player.name}}"
+  ng-class="{ 'is-occupied': (positionslotCtrl.markSlotOccupied()) }"
+>
+  <img class="teamlineup--image"
+    ng-src="assets/img/people/{{positionslotCtrl.player.position | playerGroupUnabbreviated | lowercase}}s/{{positionslotCtrl.player.name | lowercaseHyphens}}.png"
+  />
+  <span class="teamlineup--playername">{{positionslotCtrl.player.name | lastNameOnly}}</span>
+</div>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html class="no-js" ng-app="dreamteam">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Chris Mendes | Sample AngularJS App: Football Dream Team</title>
+    <meta name="description" content="Sample AngularJS application written by Chris Mendes.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="assets/css/main.css"/>
+
+    <!--[if lt IE 9]>
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <div class="layout-container">
+
+      <header class="layout-header">
+        <div class="app-title">
+          <img class="app-title--logo" src="assets/img/angularjs.png" width="75" height"80" alt="AngularJS"/>
+          <h1>Sample AngularJS Application - Football Dream Team</h1>
+          <p class="app-title--author">Chris Mendes &nbsp;|&nbsp; Contract Front-end Developer</p>
+        </div>
+      </header>
+
+      <main class="layout-content" ui-view ng-cloak>
+
+      </main>
+
+    </div>
+
+    <script src="libraries/angular/angular.min.js"></script>
+    <script src="libraries/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="libraries/angularfire/dist/angularfire.min.js"></script>
+    <script src="libraries/angular-strap/src/tab/tab.js"></script>
+    <script src="libraries/firebase/firebase.js"></script>
+    <script src="libraries/lodash/lodash.min.js"></script>
+    <script src="libraries/jquery/dist/jquery.min.js"></script>
+    <script src="libraries/ngstorage/ngStorage.min.js"></script>
+    
+    <script src="dreamteam.js"></script>
+    <script src="app/common/common.js"></script>
+    
+    <script src="app/main/selectplayers/selectplayers-controller.js"></script>
+    <script src="app/main/assignpositions/assignpositions-controller.js"></script>
+    <script src="app/main/compareteams/compareteams-controller.js"></script>
+
+    <script src="app/playerselect/playerselect-directive.js"></script>
+    <script src="app/playerselect/playerselect-filter.js"></script>
+    <script src="app/formationselect/formationselect-directive.js"></script>
+    <script src="app/formationselect/formationselect-filter.js"></script>
+    <script src="app/positionassign/positionslot-directive.js"></script>
+    <script src="app/positionassign/playerlistitem-directive.js"></script>
+
+    <script src="app/common/models/players-model.js"></script>
+    <script src="app/common/models/users-model.js"></script>
+    <script src="app/common/services/playerselection-service.js"></script>
+    <script src="app/common/services/positionassignment-service.js"></script>
+    <script src="app/common/services/date-service.js"></script>
+    <script src="app/common/directives/navigation/navigation-directive.js"></script>
+    <script src="app/common/directives/escapekey/escapekey-directive.js"></script>
+    <script src="app/common/directives/draganddrop/draggableitem-directive.js"></script>
+    <script src="app/common/directives/draganddrop/droparea-directive.js"></script>
+    <script src="app/common/filters/lowercasehyphens-filter.js"></script>
+    <script src="app/common/filters/lastnameonly-filter.js"></script>
+    <script src="app/common/filters/positionsort-filter.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,229 @@
+// Player positioning over pitch graphic for team line-up selection purposes
+
+.teamlineup {
+  @include span(10 of 12);
+  @include push(1 of 12);
+}
+
+.teamlineup--positionslot {
+  @include span(2 of 12);
+  height: 80px;
+  margin-top: 20px;
+  margin-bottom: 60px;
+
+  background: rgba(255, 255, 255, 0.5);
+
+  display: none; // Hidden when no formation specified
+}
+
+.teamlineup--positionslot img {
+  width: 100%;
+  height: auto;
+
+  z-index: 0;
+  position: relative;
+  display: none;
+}
+
+.teamlineup--playername {
+  color: #008EB3;
+  font-size: 0.7em;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+
+  width: 100%;
+  height: 23px;
+  padding: 6px 0;
+  margin-top: -20px;
+
+  z-index: 1;
+  position: relative;
+  display: none;
+
+  background: #fbfbfb;
+  background: linear-gradient(to bottom, #fbfbfb, #e1e1e1);
+}
+
+.teamlineup--playername.is-hidden,
+.teamlineup--image.is-hidden{
+  display: none;
+}
+
+.teamlineup--positionslot .is-occupied,
+.teamlineup--positionslot.is-occupied {
+  img, .teamlineup--playername {
+    display: block;
+  }
+}
+
+.teamlineup--positionslot.is-movable .is-occupied:hover,
+.teamlineup--positionslot.is-movable.is-occupied:hover {
+  cursor: grab;
+  cursor: -webkit-grab;
+  box-shadow: 0 0 20px #fffb33;
+
+  .teamlineup--playername {
+    color: #00a0ca;
+    background: #ffe500;;
+  }
+}
+
+
+// ---
+// Common Player Spacing/Positiong
+// ---
+.playercentral {
+  @include span(isolate 2 at 6 of 12);
+}
+.playerspacing-5 {
+  @include gutter(2.1em);
+}
+.playerspacing-4 {
+  @include gutter(4.7em);
+}
+.teamlineup--positionslot:nth-child(10) { // Player before goalkeeper
+  margin-right: 0 !important; // Last
+}
+
+
+// ---
+// Goalkeeper
+// ---
+.teamlineup--positionslot:nth-child(11) {
+  @include break;
+  @extend .playercentral;
+}
+
+
+// ---
+// Formation: 4-5-1
+// ---
+.teamlineup-451 {
+
+  .teamlineup--positionslot {
+    display: block;
+  }
+
+  // Forward
+  .teamlineup--positionslot:first-child {
+    @extend .playercentral;
+  }
+
+  // Midfielders
+  .teamlineup--positionslot:nth-child(2) {
+    @include break;
+  }
+  .teamlineup--positionslot:nth-child(1) ~ .teamlineup--positionslot { // Set spacing for midfielders
+    @extend .playerspacing-5;
+  }
+  .teamlineup--positionslot:nth-child(6) {
+    margin-right: 0 !important; // Last
+  }
+  .teamlineup--positionslot:nth-child(2), // Push wingers forward
+  .teamlineup--positionslot:nth-child(6) {
+    margin-top: -20px;
+  }
+  .teamlineup--positionslot:nth-child(4) { // Holding midfielder
+    margin-top: 90px;
+  }
+
+  // Defenders
+  .teamlineup--positionslot:nth-child(6) ~ .teamlineup--positionslot {
+    @extend .playerspacing-4;
+    margin-top: 0;
+    margin-bottom: 35px;
+  }
+  .teamlineup--positionslot:nth-child(7) {
+    @include break;
+  }
+}
+
+
+// ---
+// Formation: 4-4-2
+// ---
+.teamlineup-442 {
+
+  .teamlineup--positionslot {
+    display: block;
+  }
+
+  // Forwards
+  .teamlineup--positionslot:first-child {
+    @include span(isolate 2 at 4 of 12);
+  }
+  .teamlineup--positionslot:nth-child(2) {
+    @include span(isolate 2 at 8 of 12);
+  }
+
+  // Midfielders
+  .teamlineup--positionslot:nth-child(3) {
+    @include break;
+  }
+  .teamlineup--positionslot:nth-child(2) ~ .teamlineup--positionslot {
+    @extend .playerspacing-4;
+    margin-top: 30px;
+  }
+  .teamlineup--positionslot:nth-child(6) {
+    margin-right: 0 !important; // Last
+  }
+
+  // Defenders
+  .teamlineup--positionslot:nth-child(7) {
+    @include break;
+  }
+  .teamlineup--positionslot:nth-child(6) ~ .teamlineup--positionslot {
+    @extend .playerspacing-4;
+    margin-bottom: 35px;
+  }
+}
+
+
+// ---
+// Formation: 3-5-2
+// ---
+.teamlineup-352 {
+
+  .teamlineup--positionslot {
+    display: block;
+  }
+
+  // Forwards
+  .teamlineup--positionslot:first-child {
+    @include span(isolate 2 at 4 of 12);
+  }
+  .teamlineup--positionslot:nth-child(2) {
+    @include span(isolate 2 at 8 of 12);
+  }
+
+  // Midfielders
+  .teamlineup--positionslot:nth-child(3) {
+    @include break;
+  }
+  .teamlineup--positionslot:nth-child(2) ~ .teamlineup--positionslot {
+    @extend .playerspacing-5;
+  }
+  .teamlineup--positionslot:nth-child(7) {
+    margin-right: 0 !important; // Last
+  }
+  .teamlineup--positionslot:nth-child(3), // Push wingers forward
+  .teamlineup--positionslot:nth-child(7) {
+    margin-top: -20px;
+  }
+  .teamlineup--positionslot:nth-child(5) { // Holding midfielder
+    margin-top: 90px;
+  }
+
+  // Defenders
+  .teamlineup--positionslot:nth-child(8) {
+    @include break;
+    @include span(isolate 2 at 3 of 12);
+  }
+  .teamlineup--positionslot:nth-child(7) ~ .teamlineup--positionslot {
+    @include gutter(4em);
+    margin-top: 0;
+    margin-bottom: 35px;
+  }
+
+}

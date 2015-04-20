@@ -1,0 +1,49 @@
+<nav class="layout-navbar">
+  <navigation-tabs></navigation-tabs>
+  <button class="btn" ui-sref="intro">&laquo; Back to Intro</button>
+  <button class="btn btn-primary" ui-sref="playerPositions" ng-disabled="!ctrl.selectionStatus.complete" ng-class="{ 'is-disabled': (!ctrl.selectionStatus.complete) }">Continue &raquo;</button>
+  <div class="layout-navbar-rightcorner">
+    <a href="#compare" class="link-secondary">Skip to Other Users' Teams</a>
+  </div>
+</nav>
+
+<div class="layout-contentbody">
+
+  <section class="layout-contentsection">
+    <h2>Set Your Formation</h2>
+    
+    <formationselect></formationselect>
+  </section>
+
+  <section class="layout-contentsection">
+    <h2>Choose Your Players</h2>
+
+    <div class="layout-playertabsright">
+      <span class="message" ng-class="{'message-is-hidden': (ctrl.selectionStatus.complete || ctrl.selectionStatus.error)}">
+        Your team requires <strong>{{ctrl.selectionStatus.quota}}</strong> more players to be selected.
+      </span>
+      <span class="message-error" ng-class="{'message-is-hidden': (!ctrl.selectionStatus.error)}">
+        Alert: Too many <strong>{{ctrl.selectionStatus.error | playerGroupUnabbreviated | lowercase}}s</strong> for chosen formation.
+      </span>
+      <span class="message-success" ng-class="{'message-is-hidden': (!ctrl.selectionStatus.complete)}">
+        <strong>All done!</strong> Click the blue button above to continue.
+      </span>
+    </div>
+
+    <div bs-tabs>
+      <div title="Goalkeepers" bs-pane>
+        <players position="gk" players="::ctrl.players.gk"></players>
+      </div>
+      <div title="Defenders" bs-pane>
+        <players position="def" players="::ctrl.players.def"></players>
+      </div>
+      <div title="Midfielders" bs-pane>
+        <players position="mid" players="::ctrl.players.mid"></players>
+      </div>
+      <div title="Forwards" bs-pane>
+        <players position="fwd" players="::ctrl.players.fwd"></players>
+      </div>
+    </div>
+  </section>
+
+</div>

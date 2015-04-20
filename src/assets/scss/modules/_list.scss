@@ -1,0 +1,111 @@
+.list {
+  font-size: 0.9em;
+}
+
+.list--header,
+.list--item {
+  padding: 14px;
+  span {
+    display: inline-block;
+  }
+}
+
+.list--header {
+  color: #999;
+  font-size: 0.7em;
+  text-transform: uppercase;
+
+  padding-top: 0;
+  float: left;
+  width: 100%;
+}
+
+.list--footer {
+  color: #999;
+  font-size: 0.8em;
+
+  float: left;
+  width: 100%;
+  margin-top: 8px;
+  padding-left: 12px;
+}
+
+.list--item {
+  width: 100%;
+  margin-bottom: 6px;
+
+  text-align: left;
+}
+
+
+.list--item.is-marked-done {
+  color: #c0c0c0;
+  background: #fff;
+  cursor: default;
+}
+
+
+// ---
+// Player List Columns
+// ---
+.list--playerpos {
+  float: left;
+  width: 20%;
+}
+.list--playerclub {
+  float: right;
+  width: 30%;
+
+  text-align: left;
+}
+
+// ---
+// Team List Columns
+// ---
+.list--username {
+  float: left;
+  width: 45%;
+}
+.list--formation {
+  float: left;
+  width: 30%;
+}
+.list--date {
+  float: right;
+  width: 25%;
+  text-align: left;
+}
+
+
+// ---
+// Drag and Drop
+// ---
+.list--item-draggable {
+  cursor: grab;
+  cursor: -webkit-grab;
+  &:active {
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+  }
+}
+
+
+// ---
+// States
+// ---
+.list--item.is-active,
+.list--item.is-active:hover {
+  @extend .btn-primary;
+  @extend .btn-primary:active;
+}
+
+.list--item.is-inactive {
+  opacity: 0.4;
+}
+
+.list--item.is-highlighted {
+  border: 1px solid #fa9915;
+}
+.list--item.is-active.is-highlighted {
+  border: 0;
+}

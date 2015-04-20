@@ -1,0 +1,10 @@
+<div class="tabs">
+  <ul class="tabs--links">
+    <li ng-repeat="$pane in $panes track by $index" ng-class="[ $index == $panes.$active ? 'is-active' : '', $pane.disabled ? 'is-disabled' : '' ]">
+      <a ng-click="!$pane.disabled && $setActive($index)" data-index="{{ $index }}" ng-bind-html="$pane.title"></a>
+    </li>
+  </ul>
+  <div class="tab--content" ng-transclude>
+
+  </div>
+</div>

@@ -1,0 +1,142 @@
+.playerselect {
+  width: 100%;
+  min-height: 237px;
+  float: left;
+}
+
+.playerselect li {
+  @include gallery(2 of 12);
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+
+  list-style: none;
+  text-align: center;
+
+  cursor: pointer;
+}
+
+
+// ---
+// Player Details
+// ---
+.playerselect--photo {
+  border: 4px solid #f7f7f7;
+  border-bottom: 0;
+}
+
+.playerselect--photo,
+.playerselect--meta {
+  display: block;
+  margin: 0 auto;
+}
+
+.playerselect--meta {
+  width: 144px;
+  padding: 20px 0 10px 0;
+  margin-top: -10px;
+
+  background: #fbfbfb;
+  background: linear-gradient(to bottom, #fbfbfb, #e1e1e1);
+  border: 2px solid #fff;
+  border-radius: 10px;
+}
+
+.playerselect--name,
+.playerselect--club {
+  display: inline-block;
+  width: 100%;
+  clear: both;
+
+  user-select: none;
+}
+.playerselect--name {
+  font-size: 0.9em;
+  margin-bottom: 4px;
+}
+.playerselect--club {
+  font-size: 0.7em;
+  font-weight: bold;
+}
+
+
+// ---
+// State: Selected
+// ---
+.playerselect li.is-selected {
+  .playerselect--photo {
+    opacity: 1;
+    border: 4px solid #58BDE8 !important;
+    border-bottom: 0 !important;
+  }
+  .playerselect--meta {
+    background: #61C4EB !important;
+    background: linear-gradient(to bottom, #61C4EB, #0D85D1) !important;
+  }
+  .playerselect--name {
+    color: #ffe500;
+  }
+  .playerselect--club {
+    color: #fff;
+  }
+}
+
+// ---
+// State: Selected, position full (quota met)
+// ---
+.playerselect li.is-selectedfull {
+  .playerselect--meta {
+    background: #5EC77C !important;
+    background: linear-gradient(to bottom, #5EC77C, #4DA669) !important;
+  }
+  .playerselect--photo {
+    border-color: #5DC67B !important;
+  }
+}
+
+
+// ---
+// State: Unselected (not selected, position quota met)
+// ---
+.playerselect li.is-unselected {
+  .playerselect--photo {
+    opacity: 0.5 !important;
+  }
+  .playerselect--meta {
+    color: #777;
+    background: #fbfbfb !important;
+    background: linear-gradient(to bottom, #fbfbfb, #e1e1e1) !important;
+  }
+}
+
+
+// ---
+// State: Error (formation change, too many players)
+// ---
+.playerselect li.is-error {
+  .playerselect--meta {
+    color: #777;
+    background: #e27b80 !important;
+    background: linear-gradient(to bottom, #e27b80, #ca343b) !important
+  }
+  .playerselect--photo {
+    border-color: #DF7379 !important;
+  }
+}
+
+
+// ---
+// State: Hover
+// ---
+.playerselect li:hover {
+  .playerselect--photo {
+    opacity: 1;
+    border-color: #e8e8e8;
+  }
+  .playerselect--meta {
+    background: #efefef;
+    background: linear-gradient(to bottom, #efefef, #c0c0c0);
+  }
+}
+.playerselect--photo {
+  opacity: 0.9;
+}

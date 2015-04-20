@@ -1,0 +1,47 @@
+<nav class="layout-navbar">
+  <navigation-tabs></navigation-tabs>
+  <button ui-sref="selectPlayers" class="btn">&laquo; Revise Player Selection</button>
+  <button ui-sref="compareTeams" class="btn btn-primary" ng-disabled="!ctrl.userTeam.status.complete" ng-class="{ 'is-disabled': (!ctrl.userTeam.status.complete) }">Continue &raquo;</button>
+  <div class="layout-navbar-rightcorner">
+    <a href="#compare" class="link-secondary">Skip to Other Users' Teams</a>
+  </div>
+</nav>
+
+<div class="layout-contentbody">
+
+  <h2>Your Team Line-Up</h2>
+  <p>Click and drag your players onto the pitch.</p>
+
+  <section class="layout-rightcolumn-header">
+    <formationselect compact="true" btn-label="Change Formation &raquo;"></formationselect>
+  </section>
+
+  <section class="layout-leftcolumn">
+    <div class="list">
+      <div class="list--header">
+        <span class="list--playerpos">Pos</span>
+        <span class="list--playername">Name</span>
+        <span class="list--playerclub">Club</span>
+      </div>
+      <player-list-item
+        ng-repeat="player in ctrl.userTeam.players | sortByPosition"
+        player="player"
+      >
+      </player-list-item>
+    </div>
+  </section>
+
+  <section class="layout-rightcolumn">
+    <div class="layout-footballpitch">
+      <div class="teamlineup teamlineup-{{ctrl.userTeam.formation}}">
+        <position-slot class="teamlineup--positionslot is-movable"
+          drop-area
+          ng-repeat="position in ctrl.userTeam.players track by $index"
+          position-id="{{$index}}"
+        >
+        </position-slot>
+      </div>
+    </div>
+  </section>
+
+</div>

@@ -1,0 +1,13 @@
+<div class="list--item btn"
+  ng-class="{
+    'list--item-draggable': !playerListItemCtrl.markPlayerAssigned(),
+    'is-marked-done':        playerListItemCtrl.markPlayerAssigned(),
+  }"
+  draggable-item draggable="true"
+  item-data="{{playerListItemCtrl.player.name}}"
+  item-drag-image="assets/img/people/{{playerListItemCtrl.player.position | playerGroupUnabbreviated | lowercase}}s/{{playerListItemCtrl.player.name | lowercaseHyphens}}.png"
+>
+  <span class="list--playerpos">{{playerListItemCtrl.player.position | uppercase}}</span>
+  <span class="list--playername">{{playerListItemCtrl.player.name}}</span>
+  <span class="list--playerclub">{{playerListItemCtrl.player.club}}</span>
+</div>

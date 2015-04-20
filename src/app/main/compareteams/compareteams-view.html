@@ -1,0 +1,77 @@
+<nav class="layout-navbar">
+  <navigation-tabs></navigation-tabs>
+  <div ng-if="ctrl.userTeam.players.length > 0">
+    <button ng-if="ctrl.userTeam.status.complete" class="btn" ui-sref="playerPositions">&laquo; Revise My Team</button>
+    <button ng-if="!ctrl.userTeam.status.complete" class="btn btn-primary" ui-sref="playerPositions">&laquo; Complete My Team</button>
+  </div>
+  <button ng-if="ctrl.userTeam.players.length === 0" class="btn btn-primary" ui-sref="selectPlayers">&laquo; Create My Team</button>
+</nav>
+
+<div class="layout-contentbody">
+
+  <h2>Team Comparison</h2>
+  <p ng-if="ctrl.userTeam.status.complete">
+    <span ng-if="!ctrl.userTeam.id">Save your team, and/or select a team from the list below.</span> <!-- Team unsaved. -->
+    <span ng-if="ctrl.userTeam.id">Select a team from the list below.</span> <!-- Team already saved. -->
+  </p>
+  <p ng-if="!ctrl.userTeam.status.complete">
+    <span ng-if="ctrl.userTeam.players.length === 0">Select a team from the list below. Click above to start creating your own team.</span> <!-- Team empty. -->
+    <span ng-if="ctrl.userTeam.players.length > 0">Click the button above to complete your team, or click to view another user's team below.</span> <!-- Team incomplete. -->
+  </p><br/>
+
+  <section class="layout-leftcolumn">
+    <div class="save-userteam" ng-class="{ 'is-hidden': ctrl.userTeam.id }" ng-if="ctrl.userTeam.players.length && ctrl.userTeam.status.complete">
+      <form ng-submit="ctrl.saveUserTeam()">
+        <input type="text" placeholder="First Name (max: 15)" ng-model="ctrl.userTeam.username" ng-maxlength="15"/>
+        <button class="btn btn-secondary" type="submit"
+          ng-disabled="!ctrl.userTeam.username"
+          ng-class="{ 'is-disabled': !ctrl.userTeam.username }"
+        >Submit My Team</button>
+      </form>
+    </div>
+
+    <div class="list">
+      <div class="list--header">
+        <span class="list--username">User's Name</span>
+        <span class="list--formation">Formation</span>
+        <span class="list--date">Date Added</span>
+      </div>
+      <div class="loading-message" ng-hide="ctrl.teams.length > 0">
+        <div class="loading-message--spinner"></div>
+        <span>Loading data...</span>
+      </div>
+      <div class="list--item btn"
+        ng-repeat="team in ctrl.teams | orderBy: '-id'| limitTo: 12"
+        ng-class="{
+          'is-active': (team.id === ctrl.teams[ctrl.selectedTeam].id),
+          'is-highlighted': (team.id === ctrl.userTeam.id)
+        }"
+        ng-click="ctrl.changeTeam(team.id)"
+      >
+        <span class="list--username">{{team.username}}<span ng-if="(team.id === ctrl.userTeam.id)">&nbsp;(You)</span></span>
+        <span class="list--formation">{{team.formation | formationHyphenated}}</span>
+        <span class="list--date">{{team.date}}</span>
+      </div>
+      <div class="list--footer" ng-hide="ctrl.teams.length === 0 || ctrl.teams.length < 12">
+        <span>Showing the most recent 12 submissions.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="layout-rightcolumn">
+    <div class="layout-footballpitch">
+      <div class="teamlineup teamlineup-{{ctrl.teams[ctrl.selectedTeam].formation}}">
+        <div class="teamlineup--positionslot is-occupied"
+          ng-repeat="player in ctrl.teams[ctrl.selectedTeam].players | orderBy: 'assignedPosition'"
+          player="ctrl.teams[ctrl.selectedTeam].players[$index]"
+        >
+          <img class="teamlineup--image"
+            ng-src="assets/img/people/{{player.position | playerGroupUnabbreviated | lowercase}}s/{{player.name | lowercaseHyphens}}.png"
+          />
+          <span class="teamlineup--playername">{{player.name | lastNameOnly}}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>

@@ -1,0 +1,45 @@
+<div class="playeroptionsbar">
+  <span class="playeroptionsbar-count"
+      ng-class="{
+        'is-error':    (playersCtrl.getSelectedCount() > playersCtrl.getPositionQuota()),
+        'is-complete': (playersCtrl.getSelectedCount() === playersCtrl.getPositionQuota())
+      }">
+    <span class="playeroptionsbar-countfigures">
+      {{playersCtrl.getSelectedCount()}}/{{playersCtrl.getPositionQuota()}}
+    </span>
+    selected
+  </span>
+  <span class="playeroptionsbar-reset">
+    <button class="btn"
+      ng-click="playersCtrl.resetSelection(playersCtrl.position)"
+      ng-class="{ 'is-disabled': (playersCtrl.getSelectedCount(playersCtrl.position) === 0) }"
+    >Reset</button>
+  </span>
+  <span class="playeroptionsbar-sort">
+    Sort By:
+    <a href="" ng-click="playersCtrl.setSortOrder('club')" ng-class="{'is-selected': (playersCtrl.sortOrder === 'club')}">Club</a>
+    <a href="" ng-click="playersCtrl.setSortOrder('name')" ng-class="{'is-selected': (playersCtrl.sortOrder === 'name')}">Name</a>
+  </span>
+  <span class="playeroptionsbar-search">
+    <input type="text" class="searchbox" name="playersearch" placeholder="Search by Name" ng-model="playersCtrl.searchInput" escape-key="playersCtrl.searchInput = ''"/>
+    <button class="btn" ng-class="{ 'is-disabled': !playersCtrl.searchInput }" ng-click="playersCtrl.searchInput = ''">Clear Search</button>
+  </span>
+</div>
+
+<ul class="playerselect">
+  <li
+    ng-repeat="player in playersCtrl.players | orderBy: playersCtrl.sortOrder | filter: {'name': playersCtrl.searchInput}"
+    ng-click="playersCtrl.togglePlayer(player)"
+    ng-class="{
+      'is-selected':     playersCtrl.markPlayerSelected(player),
+      'is-selectedfull': playersCtrl.markPlayerSelectedFull(player),
+      'is-unselected':   playersCtrl.markPlayerUnselected(player),
+      'is-error':        playersCtrl.markPlayerError(player)
+    }">
+    <img class="playerselect--photo" ng-src="assets/img/people/{{playersCtrl.position | playerGroupUnabbreviated | lowercase}}s/{{::player.name | lowercaseHyphens}}.png"/>
+    <p class="playerselect--meta">
+      <span class="playerselect--name">{{::player.name}}</span>
+      <span class="playerselect--club">{{::player.club}}</span>
+    </p>
+  </li>
+</ul>

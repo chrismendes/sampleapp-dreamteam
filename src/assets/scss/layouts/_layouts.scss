@@ -1,0 +1,68 @@
+.layout-container {
+  @include container;
+}
+
+.layout-header {
+  @include span(full);
+  padding: 40px 0 30px 0;
+}
+
+.layout-content {
+  @include span(full);
+
+  background: #fff;
+  box-shadow: 6px 6px 20px 0px #c0c0c0;
+}
+
+.layout-contentbody {
+  @include span(full);
+  padding: 30px;
+}
+
+.layout-contentsection {
+  @include span(full);
+  margin-bottom: 40px;
+}
+
+.layout-navbar {
+  @include span(full);
+  text-align: center;
+  position: relative;
+}
+.layout-navbar-rightcorner {
+  position: absolute;
+  right: 0;
+  margin: 10px 25px 0 0;
+  display: inline;
+}
+
+.layout-leftcolumn {
+  @include span(4);
+}
+
+.layout-rightcolumn {
+  @include span(last 8);
+}
+.layout-rightcolumn-header {
+  @include prefix(4 of 12);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.layout-footballpitch {
+  @include span(full);
+  height: 710px;
+  background: url('../img/pitch.jpg') top center no-repeat;
+}
+
+.layout-footballpitch-header {
+  @include span(full);
+  margin-bottom: 22px;
+}
+
+.layout-playertabsright {
+  float: right;
+  width: 50%;
+  padding-top: 35px;
+  padding-left: 15px;
+}

@@ -1,0 +1,42 @@
+.navigationtabs {
+  float: left;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.navigationtabs > li {
+  float: left;
+  width: 33%;
+  margin: 0;
+
+  color: #666;
+  font-size: 0.9em;
+  text-align: center;
+  text-transform: uppercase;
+  list-style: none;
+
+  background: #fcfcfc;
+  background: linear-gradient(to bottom, #fcfcfc, #efefef);
+}
+
+.navigationtabs > li:first-child {
+  width: 34%;
+}
+.navigationtabs > li:last-child {
+  float: right;
+}
+
+.navigationtabs > li.is-active {
+  background: #efefef;
+  background: linear-gradient(to bottom, #efefef, #dfdfdf);
+  border-bottom: 2px solid #4BAF7B;
+}
+
+.navigationtabs > li > a {
+  color: #666;
+  text-decoration: none;
+
+  width: 100%;
+  padding: 15px 0;
+  display: inline-block;
+}

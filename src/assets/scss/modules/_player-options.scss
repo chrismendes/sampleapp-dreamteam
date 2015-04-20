@@ -1,0 +1,60 @@
+.playeroptionsbar {
+  font-size: 0.8em;
+
+  display: inline-block;
+  margin: 20px 0 30px 12px;
+  padding: 10px 15px;
+  border-top: 1px solid #dfdfdf;
+  border-bottom: 1px solid #dfdfdf;
+}
+.playeroptionsbar button {
+  font-size: 0.9em;
+}
+
+.playeroptionsbar-count {
+  text-transform: uppercase;
+  margin-right: 15px;
+}
+  .playeroptionsbar-countfigures {
+    font-size: 1.8em;
+    letter-spacing: 1px;
+
+    display: inline-block;
+    margin: 4px 7px 0 0;
+    float: left;
+  }
+  // States (error/complete)
+  .playeroptionsbar-count.is-error .playeroptionsbar-countfigures {
+    color: $red;
+  }
+  .playeroptionsbar-count.is-complete .playeroptionsbar-countfigures {
+    color: $green;
+  }
+
+.playeroptionsbar-reset {
+  margin-right: 30px;
+}
+
+.playeroptionsbar-sort {
+  margin-right: 30px;
+}
+.playeroptionsbar-sort > a {
+  padding: 7px;
+  color: blue;
+}
+.playeroptionsbar-sort > a:active {
+  color: inherit;
+}
+.playeroptionsbar-sort > a:first-child {
+  border-right: 1px solid #efefef;
+}
+.playeroptionsbar-sort > a.is-selected {
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.playeroptionsbar-search input {
+  width: 150px;
+  margin-right: 10px;
+}
